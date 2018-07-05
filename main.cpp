@@ -1,4 +1,5 @@
 #include "mbed.h"
+#include "LSM9DS1.h"
 
 DigitalOut led1(LED1);
 DigitalIn start_in(D8,PullDown);
@@ -9,7 +10,7 @@ Serial pc(SERIAL_TX, SERIAL_RX);
 
 int main()
 {
-
+	smeAccelerometer.begin();
     /*Info system clock*/
     pc.printf("\n\rSystemCoreClock=%d\r\n",SystemCoreClock);
 
